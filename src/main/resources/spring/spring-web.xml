@@ -28,12 +28,19 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
+    <!-- 将springmvc不能处理的请求交给tomcat来处理 -->
+	<mvc:default-servlet-handler/>
+	<!-- 配置视图解析器 -->
+	  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	  	<property name="prefix" value="/layuiCMS/"></property>
+	  	<property name="suffix" value=".jsp"></property>
+	  </bean>  
     <!-- 过滤静态资源 -->
     <!-- 也可以在web.xml里通过配置<servlet-mapping>来过滤静态文件 -->
     <!-- https://www.flyzy2005.cn/?p=notes/javaweb/ssm/springMVC/springmvc-static-resources.md -->
     <mvc:resources location="/static/" mapping="/static/**"/>
-
+    <mvc:resources location="/layuiCMS/" mapping="/layuiCMS/**"/>
+    
     <!-- 如果不想用FreeMarker，则注释此配置文件中关于FreeMarker的配置，并且取消这段关于ViewResolver的配置-->
     <!--&lt;!&ndash; 配置jsp 显示ViewResolver &ndash;&gt;-->
     <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
@@ -42,22 +49,22 @@
     <!--</bean>-->
 
     <!-- 配置freeMarker视图解析器 -->
-    <bean id="viewResolverFtl"
+   <!--  <bean id="viewResolverFtl"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <!-- 自定义FreeMarkerView 添加一些通用属性-->
+        自定义FreeMarkerView 添加一些通用属性
         <property name="viewClass" value="cn.edu.whu.core.freemarker.extend.FreeMarkerViewExtend" />
         <property name="contentType" value="text/html; charset=utf-8" />
         <property name="cache" value="true" />
         <property name="suffix" value=".ftl" />
-    </bean>
+    </bean> -->
 
     <!-- 配置freeMarker 拓展-->
-    <bean id="freemarkerConfig"
+   <!--  <bean id="freemarkerConfig"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/views/"/>
         <property name="defaultEncoding" value="utf-8"/>
         <property name="freemarkerSettings">
-            <props><!-- 315360000 -->
+            <props>315360000
                 <prop key="template_update_delay">0</prop>
                 <prop key="defaultEncoding">UTF-8</prop>
                 <prop key="url_escaping_charset">UTF-8</prop>
@@ -69,7 +76,7 @@
                 <prop key="number_format">#</prop>
             </props>
         </property>
-    </bean>
+    </bean> -->
 
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

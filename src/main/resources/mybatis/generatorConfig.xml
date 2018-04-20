@@ -19,7 +19,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="cn.edu.whu.common.pojo"
+        <javaModelGenerator targetPackage="cn.edu.whu.model.pojo"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -30,11 +30,12 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.whu.common.dao"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.whu.model.dao"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表(多张就写多个table) tableName是数据库中的表名或视图名 domainObjectName是实体类名 enablexxxx可以指定不生成某些方法-->
-        <table tableName="book" domainObjectName="Book" enableCountByExample="false"/>
+        <!-- <table tableName="book" domainObjectName="Book" enableCountByExample="false"/> -->
+        <table tableName="bbs_user" domainObjectName="User" enableCountByExample="false"/>
     </context>
 </generatorConfiguration>

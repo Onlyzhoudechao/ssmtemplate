@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/webapp/layuiCMS/page/main.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/message/message.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/message/messageReply.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/news/newsAdd.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/news/newsList.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/systemParameter/systemParameter.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/user/addUser.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/user/allUsers.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/user/changePwd.jsp=UTF-8
+encoding//src/main/webapp/layuiCMS/page/user/userInfo.jsp=UTF-8
